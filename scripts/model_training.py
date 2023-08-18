@@ -4,7 +4,7 @@ from models.model_code.HistGradientBoostingRegressor  import create_model
 import joblib
 
 def load_data(file_path):
-    data = pd.read_csv(file_path, parse_dates=['Datetime'])
+    data = pd.read_csv(file_path)
     return data
 
 def train_model(X_train, y_train):
