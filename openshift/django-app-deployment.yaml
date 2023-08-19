@@ -7,7 +7,7 @@ spec:
   template:
     metadata:
       labels:
-        app: stock_predict_webapp
+        app: stock_predict_webapp-deployment
     spec:
       containers:
         - name: stock_predict_webapp
@@ -21,3 +21,16 @@ spec:
         - name: shared-volume
           persistentVolumeClaim:
             claimName: shared-pvc 
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: stock_predict_webapp-service
+spec:
+  selector:
+    app: stock_predict_webapp
+  ports:
+    - protocol: TCP
+      port: 8000
+      targetPort: 8000
+  type: NodePort

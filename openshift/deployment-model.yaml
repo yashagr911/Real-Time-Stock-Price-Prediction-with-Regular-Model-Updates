@@ -26,3 +26,16 @@ spec:
       volumes:
         - name: shared-volume
           emptyDir: {}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: data-preparation-training-service
+spec:
+  selector:
+    app: data-preparation-training
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
+
