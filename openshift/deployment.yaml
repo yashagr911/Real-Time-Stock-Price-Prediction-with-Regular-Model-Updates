@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: data-preparation-training
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: data-preparation-training
+  template:
+    metadata:
+      labels:
+        app: data-preparation-training
+    spec:
+      containers:
+        - name: preparedata
+          image: preparedata:latest
+          volumeMounts:
+            - name: shared-volume
+              mountPath: /data
+        - name: train-eval-update
+          image: train-eval-update:latest
+          volumeMounts:
+            - name: shared-volume
+              mountPath: /shared/
+      volumes:
+        - name: shared-volume
+          emptyDir: {}

@@ -1,0 +1,23 @@
+apiVersion: apps.openshift.io/v1
+kind: DeploymentConfig
+metadata:
+  name: stock_predict_webapp
+spec:
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: stock_predict_webapp
+    spec:
+      containers:
+        - name: stock_predict_webapp
+          image: stock_predict_webapp:latest
+          ports:
+            - containerPort: 8000
+          volumeMounts:
+            - name: shared-volume
+              mountPath: /shared/
+      volumes:
+        - name: shared-volume
+          persistentVolumeClaim:
+            claimName: shared-pvc 

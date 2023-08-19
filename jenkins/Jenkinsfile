@@ -1,0 +1,21 @@
+pipeline {
+    agent any
+
+    triggers {
+        cron('H * * * *') // Schedule to run every hour
+    }
+
+    stages {
+        stage('Trigger Deployment') {
+            steps {
+                script {
+                    openshift.withCluster() {
+                        openshift.withProject('stock-predict') {
+                            openshift.selector('deployment/data-preparation-training').rollout()
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

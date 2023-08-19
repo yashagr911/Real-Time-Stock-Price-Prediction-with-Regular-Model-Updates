@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Stock Price Prediction</title>
+</head>
+<body>
+    <h1>Stock Price Prediction</h1>
+    
+    <form method="post">
+        {% csrf_token %}
+        <label for="input_time">Input Time (YYYY-MM-DD HH:MM:SS):</label>
+        <input type="text" id="input_time" name="input_time" required>
+        <button type="submit">Predict</button>
+    </form>
+    
+    {% if stock_predictions %}
+    <h2>Predicted Stock Prices:</h2>
+    <ul>
+        {% for stock, price in stock_predictions.items %}
+        <li>{{ stock }}: {{ price }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+    
+    {% if error %}
+    <p style="color: red;">{{ error }}</p>
+    {% endif %}
+</body>
+</html>
