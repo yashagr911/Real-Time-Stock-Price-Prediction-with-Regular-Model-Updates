@@ -96,6 +96,6 @@ To get the project up and running, follow these steps:
    - Defined a `Jenkinsfile` to automate the deployment-model pipeline, which ran on an hourly basis, showcasing the power of continuous integration and deployment.
 
 ## Screenshot of the web app:
-![alt text]([http://url/to/img.png](https://drive.google.com/file/d/1XOAXFrIqmQ_VOEGNQK7WlYSwX19AAxuP/view?usp=sharing))
+![alt text](screenshot.png)
 
 The comprehensive project workflow highlighted the synergy between diverse technologies and tools, ultimately resulting in a robust real-time stock price prediction system. The documentation, configuration files, and pipelines provided a clear roadmap for implementing similar systems in real-world scenarios.
