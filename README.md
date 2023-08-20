@@ -1,4 +1,4 @@
-# Real-Time Stock Price Prediction System
+# Real-Time Stock Price Prediction System with Regular Model Updates
 
 This repository presents a comprehensive real-time stock price prediction system that combines Django, Docker, Jenkins, and OpenShift to deliver end-to-end capabilities for collecting stock data, training prediction models, and presenting predictions through a user-friendly web interface.
 
