@@ -6,6 +6,10 @@ This repository presents a comprehensive real-time stock price prediction system
 
 The main goal of this project is to showcase a practical implementation of a real-time stock price prediction system. The system's architecture is designed to highlight the integration of various technologies and tools. It enables users to interact with a web application to receive predictions for stock prices based on historical and current data. With the models updated regularly for a consistent prediction.
 
+## Project Workflow
+![alt text](workflow.png)
+
+
 ## Project Structure
 
 The repository is structured into several distinct components, each serving a specific purpose within the system.
